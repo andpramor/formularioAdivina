@@ -6,7 +6,11 @@
     <title>¡Adivina!</title>
 </head>
 <body>
-    h1 welcome
-    form
+    <h1>Bienvenido a: adivina un número</h1>
+    <form action="{% url 'guess' %}" method="post">
+        {% csrf_token %}
+        <input type="number" name="guess" required>
+        <button type="submit">Prueba</button>
+    </form>
 </body>
 </html>
